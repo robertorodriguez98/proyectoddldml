@@ -36,3 +36,19 @@ CONSTRAINT CK_Objetos_Conseguido CHECK (conseguido > TO_DATE('01/01/2010','DD/MM
 );
 
 INSERT INTO Objeto VALUES ('Garra de Fatalis','Selva Jurásica','Fatalis Carmesi',1500,5,TO_DATE('01/01/2015','DD/MM/YYYY'));
+
+create table Mision(
+nombre VARCHAR2 (20),
+mapa_nombre VARCHAR2 (20),
+monstruo_nombre VARCHAR2 (20),
+rango DECIMAL (2),
+descripcion VARCHAR2 (100) UNIQUE,
+recompensa DECIMAL (8,2),
+tiempo DECIMAL (2) DEFAULT 30,
+CONSTRAINT PK_Mision PRIMARY KEY (nombre),
+CONSTRAINT FK_Mision1 FOREIGN KEY (mapa_nombre) REFERENCES Mapa(nombre),
+CONSTRAINT FK_Mision2 FOREIGN KEY (monstruo_nombre) REFERENCES Monstruo(nombre),
+CONSTRAINT CK_Mision_Rango CHECK (rango >= 1 AND rango <= 10),
+CONSTRAINT CK_Mision_Tiempo CHECK (tiempo >= 1 AND tiempo <= 50),
+CONSTRAINT CK_Mision_Recompensa CHECK (recompensa >= 0 AND recompensa <= 10000)
+);
