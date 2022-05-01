@@ -30,6 +30,20 @@ CONSTRAINT CK_Objetos_Valor CHECK (valor >= 0 AND valor <= 10000),
 CONSTRAINT CK_Objetos_Conseguido CHECK (conseguido BETWEEN '2010-01-01' AND '2022-05-01')
 );
 
+create table Mision(
+nombre VARCHAR (20) PRIMARY KEY,
+mapa_nombre VARCHAR (20),
+monstruo_nombre VARCHAR (20),
+rango DECIMAL (2),
+descripcion VARCHAR (100) UNIQUE,
+recompensa DECIMAL (8,2),
+tiempo DECIMAL (2) DEFAULT 30,
+CONSTRAINT FK_Mision1 FOREIGN KEY (mapa_nombre) REFERENCES Mapa(nombre),
+CONSTRAINT FK_Mision2 FOREIGN KEY (monstruo_nombre) REFERENCES Monstruo(nombre),
+CONSTRAINT CK_Mision_Rango CHECK (rango >= 1 AND rango <= 10),
+CONSTRAINT CK_Mision_Tiempo CHECK (tiempo >= 1 AND tiempo <= 50),
+CONSTRAINT CK_Mision_Recompensa CHECK (recompensa >= 0 AND recompensa <= 10000)
+);
 
 
 INSERT INTO Monstruo VALUES ('Fatalis Carmesi','Dragón Anciano',2723);
@@ -37,3 +51,5 @@ INSERT INTO Monstruo VALUES ('Fatalis Carmesi','Dragón Anciano',2723);
 INSERT INTO Mapa VALUES('Selva Jurásica',15,'Selva');
 
 INSERT INTO Objeto VALUES ('Garra de Fatalis','Selva Jurásica','Fatalis Carmesi',1500,5,'2015-01-01');
+
+INSERT INTO Mision (nombre,mapa_nombre,monstruo_nombre,rango,descripcion,recompensa) VALUES ('Misión de Fatalis','Selva Jurásica','Fatalis Carmesi',5,'Tienes que Matar a un Fatalis Carmesí',1500);
