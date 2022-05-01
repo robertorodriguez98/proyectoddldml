@@ -8,3 +8,15 @@ CONSTRAINT CK_Monstruos_Nombre CHECK (REGEXP_LIKE(nombre,'^(\s?[A-Z][a-z]*)+$'))
 );
 
 INSERT INTO Monstruo VALUES ('Fatalis Carmesi','Dragón Anciano',2723);
+
+CREATE TABLE Mapa(
+nombre VARCHAR2 (20),
+nZonas DECIMAL (2) NOT NULL,
+bioma VARCHAR2 (20),
+CONSTRAINT PK_Mapa PRIMARY KEY (nombre),
+CONSTRAINT CK_Mapa_nZonas CHECK (nZonas >= 1 AND nZonas <= 20),
+CONSTRAINT CK_Mapa_Bioma CHECK (BIOMA IN ('Selva','Desierto','Montaña'))
+);
+
+INSERT INTO Mapa VALUES('Selva Jurásica',15,'Selva');
+
