@@ -1,3 +1,5 @@
+--TABLAS
+
 CREATE TABLE Monstruo(
 nombre VARCHAR(20),
 tipo VARCHAR(20),
@@ -7,7 +9,6 @@ CONSTRAINT CK_Monstruos_Tipo CHECK (TIPO IN ('Anfibio','Bestia de Colmillos','Ca
 CONSTRAINT CK_Monstruos_Nombre CHECK (REGEXP_LIKE(nombre,'^(\s?[A-Z][a-z]*)+$'))
 );
 
-INSERT INTO Monstruo VALUES ('Fatalis Carmesi','Dragón Anciano',2723);
 
 CREATE TABLE Mapa(
 nombre VARCHAR2 (20),
@@ -18,7 +19,6 @@ CONSTRAINT CK_Mapa_nZonas CHECK (nZonas >= 1 AND nZonas <= 20),
 CONSTRAINT CK_Mapa_Bioma CHECK (BIOMA IN ('Selva','Desierto','Montaña'))
 );
 
-INSERT INTO Mapa VALUES('Selva Jurásica',15,'Selva');
 
 CREATE TABLE Objeto(
 nombre VARCHAR2 (20),
@@ -35,7 +35,6 @@ CONSTRAINT CK_Objetos_Valor CHECK (valor >= 0 AND valor <= 10000),
 CONSTRAINT CK_Objetos_Conseguido CHECK (conseguido > TO_DATE('01/01/2010','DD/MM/YYYY') AND Conseguido <= TO_DATE('01/05/2022','DD/MM/YYYY') )
 );
 
-INSERT INTO Objeto VALUES ('Garra de Fatalis','Selva Jurásica','Fatalis Carmesi',1500,5,TO_DATE('01/01/2015','DD/MM/YYYY'));
 
 create table Mision(
 nombre VARCHAR2 (20),
@@ -53,7 +52,6 @@ CONSTRAINT CK_Mision_Tiempo CHECK (tiempo >= 1 AND tiempo <= 50),
 CONSTRAINT CK_Mision_Recompensa CHECK (recompensa >= 0 AND recompensa <= 10000)
 );
 
-INSERT INTO Mision (nombre,mapa_nombre,monstruo_nombre,rango,descripcion,recompensa) VALUES ('Mision de Fatalis 2','Selva Jurásica','Fatalis Carmesi',5,'Tienes que matar a un Fatalis Carmesí',1500);
 
 CREATE TABLE Equipo(
 nombre VARCHAR2 (20),
@@ -70,4 +68,35 @@ CONSTRAINT CK_Equipo_Elemento CHECK (elemento IN ('Fuego','Rayo','Hielo','Agua',
 CONSTRAINT CK_Equipo_Afilado CHECK (afilado IN ('Rojo','Naranja','Amarillo','Verde','Azul','Blanco','Violeta'))
 );
 
+
+-- VALORES
+INSERT INTO Monstruo VALUES ('Fatalis Carmesi','Dragón Anciano',2723);
+INSERT INTO Monstruo VALUES ('Nergigante','Dragón Anciano',3500);
+INSERT INTO Monstruo VALUES ('Teostra','Dragón Anciano',2723);
+INSERT INTO Monstruo VALUES ('Anjanath','Wyvern Bruto',2723);
+INSERT INTO Monstruo VALUES ('Paolumu','Wyvern Volador',2723);
+INSERT INTO Monstruo VALUES ('Vaal Hazak','Dragón Anciano',2723);
+
+INSERT INTO Mapa VALUES('Selva Jurásica',15,'Selva');
+INSERT INTO Mapa VALUES('Yermo de Agujas',7,'Desierto');
+INSERT INTO Mapa VALUES('Altiplanos Coralinos',17,'Selva');
+INSERT INTO Mapa VALUES('Valle Putrefacto',10,'Desierto');
+INSERT INTO Mapa VALUES('Arroyo de Escarcha',12,'Montaña');
+
+INSERT INTO Objeto VALUES ('Garra de Fatalis','Selva Jurásica','Fatalis Carmesi',1500,5,TO_DATE('01/01/2015','DD/MM/YYYY'));
+INSERT INTO Objeto VALUES ('Colmillo de Fatalis','Selva Jurásica','Fatalis Carmesi',2000,7,TO_DATE('01/01/2015','DD/MM/YYYY'));
+INSERT INTO Objeto VALUES ('Garra de Anjanath','Selva Jurásica','Anjanath',1000,3,TO_DATE('06/01/2015','DD/MM/YYYY'));
+INSERT INTO Objeto VALUES ('Núcleo de Teostra','Yermo de Agujas','Teostra',3000,8,TO_DATE('01/01/2015','DD/MM/YYYY'));
+INSERT INTO Objeto VALUES ('Alas de Paolumu','Valle Putrefacto','Paolumu',2500,8,TO_DATE('01/06/2017','DD/MM/YYYY'));
+
+INSERT INTO Mision (nombre,mapa_nombre,monstruo_nombre,rango,descripcion,recompensa) VALUES ('Mision de Fatalis','Selva Jurásica','Fatalis Carmesi',5,'Tienes que matar a un Fatalis Carmesí',1500);
+INSERT INTO Mision (nombre,mapa_nombre,monstruo_nombre,rango,descripcion,recompensa) VALUES ('Mision de Teostra','Yermo de Agujas','Teostra',6,'Tienes que matar a un Teostra',2000);
+INSERT INTO Mision (nombre,mapa_nombre,monstruo_nombre,rango,descripcion,recompensa) VALUES ('Mision de Anjanath','Selva Jurásica','Anjanath',2,'Tienes que matar a un Anjanath',750);
+
 INSERT INTO Equipo VALUES ('Arma de Fatalis','Garra de Fatalis',5,'Arma','Fuego','Rojo');
+INSERT INTO Equipo VALUES ('Armadura Fatalis','Colmillo de Fatalis',6,'Armadura',NULL,NULL);
+INSERT INTO Equipo VALUES ('Hacha de Anjanath','Garra de Anjanath',3,'Arma','Hielo','Naranja');
+INSERT INTO Equipo VALUES ('Casco de Teostra','Núcleo de Teostra',9,'Armadura',NULL,NULL);
+INSERT INTO Equipo VALUES ('Cornamusa de Paolumu','Alas de Paolumu',2,'Arma','Rayo','Amarillo');
+
+COMMIT;

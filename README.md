@@ -19,7 +19,7 @@ En las tablas debe haber:
 |:-----:|:------------:|:------------:|
 | nombre | varchar2(20) | clave primaria, debe estar compuesto solo por letras y cada palabra tiene que empezar por mayúsculas (ej: Zorah Magdaros) |
 | tipo | varchar2(20)   | enum |
-| tamaño | decimal | entre 100 y 3000 |
+| tamaño | decimal |  |
 #### Mapa
 | Campo | Tipo de datos | Restricciones |
 |:-----:|:------------:|:------------:|
