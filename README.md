@@ -17,14 +17,14 @@ En las tablas debe haber:
 #### Monstruo
 | Campo | Tipo de datos | Restricciones |
 |:-----:|:------------:|:------------:|
-| nombre | varchar2(20) | clave primaria |
+| nombre | varchar2(20) | clave primaria, debe estar compuesto solo por letras y cada palabra tiene que empezar por mayúsculas (ej: Zorah Magdaros) |
 | tipo | varchar2(20)   | enum |
 | tamaño | decimal | entre 100 y 3000 |
 #### Mapa
 | Campo | Tipo de datos | Restricciones |
 |:-----:|:------------:|:------------:|
 | nombre | varchar2(20) | clave primaria |
-| nZonas | int | entre 1 y 20 |
+| nZonas | int | entre 1 y 20 , obligatorio|
 | bioma | varchar2(20) | enum |
 #### Objeto
 | Campo | Tipo de datos | Restricciones |
@@ -42,9 +42,9 @@ En las tablas debe haber:
 | Mapa_nombre | varchar2(20) | clave ajena |
 | Monstruo_nombre | varchar2(20) | clave ajena |
 | rango | int | entre 1 y 10 |
-| descripcion | varchar2(100) |  |
+| descripcion | varchar2(100) | Única |
 | recompensa | decimal | entre 0 y 10000 |
-| tiempo | int | menor que 50 |
+| tiempo | int | menor que 50,  por defecto 30 |
 #### Equipo
 | Campo | Tipo de datos | Restricciones |
 |:-----:|:------------:|:------------:|
