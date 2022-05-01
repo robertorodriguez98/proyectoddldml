@@ -45,6 +45,17 @@ CONSTRAINT CK_Mision_Tiempo CHECK (tiempo >= 1 AND tiempo <= 50),
 CONSTRAINT CK_Mision_Recompensa CHECK (recompensa >= 0 AND recompensa <= 10000)
 );
 
+CREATE TABLE Equipo(
+nombre VARCHAR (20) PRIMARY KEY,
+objeto_nombre VARCHAR (20),
+rareza DECIMAL (2),
+tipo ENUM ('Arma','Armadura'),
+elemento ENUM ('Fuego','Rayo','Hielo','Agua','Dragón'),
+afilado ENUM ('Rojo','Naranja','Amarillo','Verde','Azul','Blanco','Violeta'),
+CONSTRAINT FK_Equipo1 FOREIGN KEY (objeto_nombre) REFERENCES Objeto(nombre),
+CONSTRAINT CK_Equipo_Rareza CHECK (rareza >= 1 AND rareza <= 10)
+);
+
 
 INSERT INTO Monstruo VALUES ('Fatalis Carmesi','Dragón Anciano',2723);
 
@@ -53,3 +64,6 @@ INSERT INTO Mapa VALUES('Selva Jurásica',15,'Selva');
 INSERT INTO Objeto VALUES ('Garra de Fatalis','Selva Jurásica','Fatalis Carmesi',1500,5,'2015-01-01');
 
 INSERT INTO Mision (nombre,mapa_nombre,monstruo_nombre,rango,descripcion,recompensa) VALUES ('Misión de Fatalis','Selva Jurásica','Fatalis Carmesi',5,'Tienes que Matar a un Fatalis Carmesí',1500);
+
+INSERT INTO Equipo VALUES ('Arma de Fatalis','Garra de Fatalis',5,'Arma','Fuego','Rojo');
+
