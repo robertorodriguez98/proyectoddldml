@@ -52,3 +52,5 @@ CONSTRAINT CK_Mision_Rango CHECK (rango >= 1 AND rango <= 10),
 CONSTRAINT CK_Mision_Tiempo CHECK (tiempo >= 1 AND tiempo <= 50),
 CONSTRAINT CK_Mision_Recompensa CHECK (recompensa >= 0 AND recompensa <= 10000)
 );
+
+INSERT INTO Mision (nombre,mapa_nombre,monstruo_nombre,rango,descripcion,recompensa) VALUES ('Mision de Fatalis','Selva Jurásica','Fatalis Carmesi',5,'Tienes que matar a un Fatalis Carmesí',1500);
