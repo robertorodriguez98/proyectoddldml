@@ -3,7 +3,7 @@
 CREATE TABLE Monstruo(
 nombre VARCHAR2(20),
 tipo VARCHAR2(20),
-tamano DECIMAL(6,2),
+tamano NUMBER(6,2),
 CONSTRAINT PK_Monstruos PRIMARY KEY (NOMBRE),
 CONSTRAINT CK_Monstruos_Tipo CHECK (TIPO IN ('Anfibio','Bestia de Colmillos','Carapaceon','Dracoalado','Dragón Anciano','Herbívoro','Leviathan','Lynian','Neopteron','Temnoceran','Wyvern Bruto','Wyvern de Colmillos','Wyvern Nadador','Wyvern Pájaro','Wyvern Serpiente','Wyvern Volador','Monstruos no clasificados')),
 CONSTRAINT CK_Monstruos_Nombre CHECK (REGEXP_LIKE(nombre,'^(\s?[A-Z][a-z]*)+$'))
@@ -12,7 +12,7 @@ CONSTRAINT CK_Monstruos_Nombre CHECK (REGEXP_LIKE(nombre,'^(\s?[A-Z][a-z]*)+$'))
 
 CREATE TABLE Mapa(
 nombre VARCHAR2 (20),
-nZonas DECIMAL (2) NOT NULL,
+nZonas NUMBER (2) NOT NULL,
 bioma VARCHAR2 (20),
 CONSTRAINT PK_Mapa PRIMARY KEY (nombre),
 CONSTRAINT CK_Mapa_nZonas CHECK (nZonas >= 1 AND nZonas <= 20),
@@ -24,8 +24,8 @@ CREATE TABLE Objeto(
 nombre VARCHAR2 (20),
 mapa_nombre VARCHAR2 (20),
 monstruo_nombre VARCHAR2 (20),
-valor DECIMAL (8,2),
-rareza DECIMAL(2),
+valor NUMBER (8,2),
+rareza NUMBER(2),
 conseguido DATE,
 CONSTRAINT PK_Objetos PRIMARY KEY (nombre),
 CONSTRAINT FK_Objetos1 FOREIGN KEY (mapa_nombre) REFERENCES Mapa(nombre),
@@ -40,10 +40,10 @@ create table Mision(
 nombre VARCHAR2 (20),
 mapa_nombre VARCHAR2 (20),
 monstruo_nombre VARCHAR2 (20),
-rango DECIMAL (2),
+rango NUMBER (2),
 descripcion VARCHAR2 (100) UNIQUE,
-recompensa DECIMAL (8,2),
-tiempo DECIMAL (2) DEFAULT 30,
+recompensa NUMBER (8,2),
+tiempo NUMBER (2) DEFAULT 30,
 CONSTRAINT PK_Mision PRIMARY KEY (nombre),
 CONSTRAINT FK_Mision1 FOREIGN KEY (mapa_nombre) REFERENCES Mapa(nombre),
 CONSTRAINT FK_Mision2 FOREIGN KEY (monstruo_nombre) REFERENCES Monstruo(nombre),
@@ -56,7 +56,7 @@ CONSTRAINT CK_Mision_Recompensa CHECK (recompensa >= 0 AND recompensa <= 10000)
 CREATE TABLE Equipo(
 nombre VARCHAR2 (20),
 objeto_nombre VARCHAR2 (20),
-rareza DECIMAL (2),
+rareza NUMBER (2),
 tipo VARCHAR2 (20),
 elemento VARCHAR2 (20),
 afilado VARCHAR2 (20),
