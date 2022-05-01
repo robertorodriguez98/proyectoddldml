@@ -1,8 +1,8 @@
 --TABLAS
 
 CREATE TABLE Monstruo(
-nombre VARCHAR(20),
-tipo VARCHAR(20),
+nombre VARCHAR2(20),
+tipo VARCHAR2(20),
 tamano DECIMAL(6,2),
 CONSTRAINT PK_Monstruos PRIMARY KEY (NOMBRE),
 CONSTRAINT CK_Monstruos_Tipo CHECK (TIPO IN ('Anfibio','Bestia de Colmillos','Carapaceon','Dracoalado','Dragón Anciano','Herbívoro','Leviathan','Lynian','Neopteron','Temnoceran','Wyvern Bruto','Wyvern de Colmillos','Wyvern Nadador','Wyvern Pájaro','Wyvern Serpiente','Wyvern Volador','Monstruos no clasificados')),
