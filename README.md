@@ -62,7 +62,7 @@ Consultas
 6. En la tabla equipo, actualizar el afilado de los registros que tengan rareza superior a 4 y sean armas a: "Blanco" [MODIFICACION DE REGISTROS]
 7. Elimina los mapas en los que no se obtiene ningún objeto.[BORRADO DE REGISTROS]
 8. Mostrar cada monstruo y el precio total de los objetos que se obtienen de él [GROUP BY]
-9. [OUTER JOIN]
+9. Mostrar los nombres de los monstruos y los equipos que se obtienen a partir de los objetos que sueltan [OUTER JOIN]
 10. [OPERADORES DE CONJUNTO]
 11. [SUBCONSULTAS CORRELACIONADAS]
 12. [MEZCLA DE LOS ANTERIORES]
