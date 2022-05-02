@@ -60,7 +60,7 @@ Consultas
 4. Obtener el precio combinado de los objetos que se pueden obtener en "Selva Jurásica" [COMBINACIÓN DE TABLAS]
 5. [INSERCIÓN DE REGISTROS]
 6. En la tabla equipo, actualizar el afilado de los registros que tengan rareza superior a 4 y sean armas a: "Blanco" [MODIFICACION DE REGISTROS]
-7. [BORRADO DE REGISTROS]
+7. Elimina los mapas en los que no se obtiene ningún objeto.[BORRADO DE REGISTROS]
 8. [GROUP BY]
 9. [OUTER JOIN]
 10. [OPERADORES DE CONJUNTO]

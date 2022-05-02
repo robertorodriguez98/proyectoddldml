@@ -45,3 +45,7 @@ update Equipo
 set afilado = 'Blanco'
 where rareza > 4
 and tipo = 'Arma';
+
+delete from Mapa
+where nombre not in (select mapa_nombre
+                    from Objeto);
