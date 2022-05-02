@@ -49,3 +49,12 @@ and tipo = 'Arma';
 delete from Mapa
 where nombre not in (select mapa_nombre
                     from Objeto);
+
+-- Mostrar cada monstruo y el precio total de los objetos que se obtienen de el
+
+select m.nombre, sum(o.valor) as total
+from Monstruo m, Objeto o
+where m.nombre = o.monstruo_nombre
+group by m.nombre;
+
+
