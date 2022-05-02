@@ -56,4 +56,13 @@ Modificaciones sobre las tablas:
 Consultas
 1. Mostrar los nombres de todos los monstruos [SENCILLA]
 2. Crear una vista que contenga el nombre de los objetos junto a su valor [VISTA]
-
+3. Mostrar las piezas de equipamiento que se obtienen del monstruo "Fatalis Carmesi" [SUBCONSULTA]
+4. [COMBINACIÓN DE TABLAS]
+5. [INSERCIÓN DE REGISTROS]
+6. [MODIFICACION DE REGISTROS]
+7. [BORRADO DE REGISTROS]
+8. [GROUP BY]
+9. [OUTER JOIN]
+10. [OPERADORES DE CONJUNTO]
+11. [SUBCONSULTAS CORRELACIONADAS]
+12. [MEZCLA DE LOS ANTERIORES]

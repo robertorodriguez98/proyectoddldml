@@ -30,3 +30,8 @@ select nombre from Monstruo;
 create view valor_objetos as
 select nombre, valor from Objeto;
 
+select nombre
+from Equipo
+where Objeto_nombre in (select nombre
+                        from Objeto
+                        where monstruo_nombre= 'Fatalis Carmesi');
