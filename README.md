@@ -63,6 +63,6 @@ Consultas
 7. Elimina los mapas en los que no se obtiene ningún objeto.[BORRADO DE REGISTROS]
 8. Mostrar cada monstruo y el precio total de los objetos que se obtienen de él [GROUP BY]
 9. Mostrar los nombres de los monstruos y los equipos que se obtienen a partir de los objetos que sueltan [OUTER JOIN]
-10. [OPERADORES DE CONJUNTO]
+10. Mostrar el bioma y la mision de los mapas que tienen misión[OPERADORES DE CONJUNTO]
 11. [SUBCONSULTAS CORRELACIONADAS]
 12. [MEZCLA DE LOS ANTERIORES]

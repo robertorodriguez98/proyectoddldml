@@ -60,3 +60,8 @@ select objeto.monstruo_nombre,equipo.nombre
 from Objeto
 FULL outer join Equipo On objeto.nombre=equipo.objeto_nombre
 order by equipo.nombre;
+
+select mapa.nombre, mision.Nombre
+from Mapa right join mision
+on mapa.nombre = mision.mapa_nombre
+order by mapa.nombre;
