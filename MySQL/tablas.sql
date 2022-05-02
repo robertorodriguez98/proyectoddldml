@@ -30,6 +30,8 @@ CONSTRAINT CK_Objetos_Valor CHECK (valor >= 0 AND valor <= 10000),
 CONSTRAINT CK_Objetos_Conseguido CHECK (conseguido BETWEEN '2010-01-01' AND '2022-05-01')
 );
 
+-- VALORES
+
 create table Mision(
 nombre VARCHAR (20) PRIMARY KEY,
 mapa_nombre VARCHAR (20),
