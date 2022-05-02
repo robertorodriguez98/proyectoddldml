@@ -51,4 +51,9 @@ Modificaciones sobre las tablas:
 4. Desactiva la restricción e introduce un valor negativo
 5. vuelve a activarla.
 6. Eliminar la restricción
-3. Eliminar la columna peso.
+7. Eliminar la columna peso.
+
+Consultas
+1. Mostrar los nombres de todos los monstruos [SENCILLA]
+2. Crear una vista que contenga el nombre de los objetos junto a su valor [VISTA]
+

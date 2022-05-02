@@ -25,3 +25,8 @@ drop column peso;
 
 -- Consultas
 
+select nombre from Monstruo;
+
+create view valor_objetos as
+select nombre, valor from Objeto;
+
