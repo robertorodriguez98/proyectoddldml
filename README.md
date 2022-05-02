@@ -57,7 +57,7 @@ Consultas
 1. Mostrar los nombres de todos los monstruos [SENCILLA]
 2. Crear una vista que contenga el nombre de los objetos junto a su valor [VISTA]
 3. Mostrar las piezas de equipamiento que se obtienen del monstruo "Fatalis Carmesi" [SUBCONSULTA]
-4. [COMBINACIÓN DE TABLAS]
+4. Obtener el precio combinado de los objetos que se pueden obtener en "Selva Jurásica" [COMBINACIÓN DE TABLAS]
 5. [INSERCIÓN DE REGISTROS]
 6. [MODIFICACION DE REGISTROS]
 7. [BORRADO DE REGISTROS]
