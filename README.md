@@ -59,7 +59,7 @@ Consultas
 3. Mostrar las piezas de equipamiento que se obtienen del monstruo "Fatalis Carmesi" [SUBCONSULTA]
 4. Obtener el precio combinado de los objetos que se pueden obtener en "Selva Jurásica" [COMBINACIÓN DE TABLAS]
 5. [INSERCIÓN DE REGISTROS]
-6. [MODIFICACION DE REGISTROS]
+6. En la tabla equipo, actualizar el afilado de los registros que tengan rareza superior a 4 y sean armas a: "Blanco" [MODIFICACION DE REGISTROS]
 7. [BORRADO DE REGISTROS]
 8. [GROUP BY]
 9. [OUTER JOIN]

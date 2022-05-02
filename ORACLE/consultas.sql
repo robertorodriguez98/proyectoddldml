@@ -41,3 +41,7 @@ from Objeto o, Mision m
 where o.monstruo_nombre = m.monstruo_nombre
 and m.mapa_nombre = 'Selva Jurásica';
 
+update Equipo
+set afilado = 'Blanco'
+where rareza > 4
+and tipo = 'Arma';
