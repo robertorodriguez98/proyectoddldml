@@ -71,3 +71,9 @@ where o1.valor > (select avg(o2.valor)
                     from Objeto o2
                     where o2.monstruo_nombre = o1.monstruo_nombre);
 
+select o.monstruo_nombre
+from objeto o
+where o.nombre in (select e.objeto_nombre
+                    from Equipo e
+                    where e.tipo = 'Arma')
+and conseguido > TO_DATE('02/01/2015','DD/MM/YYYY');
