@@ -1,3 +1,5 @@
+-- Modificaciones de las tablas
+
 alter table Monstruo
 add peso DECIMAL (8,2);
 
@@ -12,4 +14,14 @@ add constraint CK_Monstruo_Peso CHECK (TO_NUMBER(peso) >= 0);
 alter table Monstruo
 disable constraint CK_Monstruo_Peso;
 
-insert into Monstruo values('Fatalis Verde','Dragón Anciano',2723,'-1');
+alter table Monstruo
+enable constraint CK_Monstruo_Peso;
+
+alter table Monstruo
+drop constraint CK_Monstruo_Peso;
+
+alter table Monstruo
+drop column peso;
+
+-- Consultas
+
