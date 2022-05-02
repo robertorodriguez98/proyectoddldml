@@ -1,16 +1,4 @@
 # Proyecto DDL y DML
-
-# ENUNCIADO Esquema
-Debes crear un esquema relacional de una temática de tu interés con al menos 5 tablas.
-En las tablas debe haber:
-* Al menos datos de los tipos principales (textos, números y fechas).
-* Restricciones de:
-    * Clave primaria
-    * Clave ajena
-    * De obligatoriedad
-    * Valor por defecto
-    * Verificación de condiciones en las que emplees funciones, operadores y expresiones regulares.
-    * Unicidad
 ## Esquema relacional
 ![](monstruos.png)
 ### Tablas
@@ -54,3 +42,13 @@ En las tablas debe haber:
 | tipo | varchar2(20) | enum |
 | elemento | varchar2(20) | enum |
 | afilado | varchar2(20) | enum |
+
+## Enunciado
+Modificaciones sobre las tablas:
+1. Añadir a la tabla Monstruo un un campo peso, de tipo decimal con 2 decimales.
+2. modificar el campo para que sea de tipo varchar2, ya que no vamos a operar con el número.
+3. Crear una restricción  que no permita que el peso sea negativo.
+4. Desactiva la restricción e introduce un valor negativo
+5. vuelve a activarla.
+6. Eliminar la restricción
+3. Eliminar la columna peso.
