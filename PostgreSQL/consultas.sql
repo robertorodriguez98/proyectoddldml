@@ -38,3 +38,34 @@ set afilado = 'Blanco'
 where rareza > 4
 and tipo = 'Arma';
 
+delete from Mapa
+where nombre not in (select mapa_nombre
+                    from Objeto);
+
+select m.nombre, sum(o.valor) as total
+from Monstruo m, Objeto o
+where m.nombre = o.monstruo_nombre
+group by m.nombre;
+
+select objeto.monstruo_nombre,equipo.nombre
+from Objeto
+FULL outer join Equipo On objeto.nombre=equipo.objeto_nombre
+order by equipo.nombre;
+
+select mapa.nombre, mision.Nombre
+from Mapa right join mision
+on mapa.nombre = mision.mapa_nombre
+order by mapa.nombre;
+
+select o1.nombre, o1.valor
+from Objeto o1
+where o1.valor > (select avg(o2.valor)
+                    from Objeto o2
+                    where o2.monstruo_nombre = o1.monstruo_nombre);
+
+select o.monstruo_nombre
+from objeto o
+where o.nombre in (select e.objeto_nombre
+                    from Equipo e
+                    where e.tipo = 'Arma')
+and conseguido > TO_DATE('02/01/2015','DD/MM/YYYY');
